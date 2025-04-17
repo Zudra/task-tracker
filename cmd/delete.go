@@ -15,6 +15,9 @@ func NewDeleteCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use: "delete",
 		Short: "Deletes a task from the task-tracker",
+		Long: `Delete the task from the task-tracker when provided the following arguments:
+				
+				Task ID - Id from the task you want to delete`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return RunDeleteTaskCmd(args)
 		},
