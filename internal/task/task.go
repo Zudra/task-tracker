@@ -169,3 +169,31 @@ func UpdateTaskStatus(id int64, status TaskStatus) error {
 
 	return WriteTasksToFile(updatedTasks)
 }
+
+func UpdateTaskDescription(id int64, description string) error {
+	tasks, err := ReadTasksFromFile()
+	if err != nil {
+		return err
+	}
+
+	var taskExists bool = false
+	var updatedTasks []Task
+	for _, task := range tasks {
+		if task.ID == id {
+			taskExists = true
+			task.Description = description
+			task.UpdatedAt = time.Now()
+
+			updatedTasks = append(updatedTasks, task)
+		}
+		updatedTasks = append(updatedTasks, task)
+	}
+
+	if !taskExists {
+		return fmt.Errorf("the task given was not found (ID: %d)", id)
+	}
+
+	fmt.Printf("The task was succsessfully updated! (ID: %d)\n\n", id)
+
+	return WriteTasksToFile(updatedTasks)
+}
