@@ -63,3 +63,7 @@ func RunUpdateStatusCmd(TaskID int64, status task.TaskStatus) error {
 func RunUpdateDescriptionCmd(TaskID int64, description string) error {
 	return task.UpdateTaskDescription(TaskID, description)
 }
+
+func init() {
+	rootCmd.AddCommand(NewDeleteCmd())
+}

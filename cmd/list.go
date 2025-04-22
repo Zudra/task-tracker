@@ -34,3 +34,7 @@ func RunListCmd(args []string) error {
 
 	return task.ListTasks("all")
 }
+
+func init() {
+	rootCmd.AddCommand(NewListCmd())
+}

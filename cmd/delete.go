@@ -40,3 +40,7 @@ func RunDeleteTaskCmd(args []string) error {
 
 	return task.DeleteTask(TaskIdInt)
 }
+
+func init() {
+	rootCmd.AddCommand(NewDeleteCmd())
+}

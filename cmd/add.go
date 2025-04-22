@@ -30,3 +30,7 @@ func RunAddTaskCmd(args []string) error {
 	description := args[0]
 	return task.AddTask(description)
 }
+
+func init() {
+	rootCmd.AddCommand(NewAddCmd())
+}
