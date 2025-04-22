@@ -45,7 +45,7 @@ func RunUpdateTaskCmd(args []string) error {
 	}
 
 	switch UpdateObject {
-	case "to-do":
+	case "todo":
 		return RunUpdateStatusCmd(TaskIDInt, "todo")
 	case "in-progress":
 		return RunUpdateStatusCmd(TaskIDInt, "in-progress")

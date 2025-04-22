@@ -79,7 +79,7 @@ func FormatStatusFromString(status string) TaskStatus {
 	switch status {
 	case "all":
 		return "all"
-	case "to-do":
+	case "todo":
 		return TASK_STATUS_TODO
 	case "in-progress":
 		return TASK_STATUS_IN_PROGRESS
