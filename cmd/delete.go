@@ -28,7 +28,7 @@ func NewDeleteCmd() *cobra.Command {
 
 func RunDeleteTaskCmd(args []string) error {
 	if len(args) != 1 {
-		return errors.New("A Task ID is required")
+		return errors.New("a Task ID is required")
 	}
 
 	TaskID := args[0]

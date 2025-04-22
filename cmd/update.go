@@ -13,7 +13,7 @@ import (
 
 func NewUpdateCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "update",
+		Use:   "update",
 		Short: "Update a task state in the task list",
 		Long: `Update a task state providing the Task ID and the new description or state
 		
@@ -33,7 +33,7 @@ func NewUpdateCmd() *cobra.Command {
 
 func RunUpdateTaskCmd(args []string) error {
 	if len(args) < 2 {
-		errors.New("Update needs the Task ID and the new description or state")
+		return errors.New("update needs the Task ID and the new description or state")
 	}
 
 	TaskID := args[0]

@@ -24,7 +24,7 @@ func NewAddCmd() *cobra.Command {
 
 func RunAddTaskCmd(args []string) error {
 	if len(args) == 0 {
-		return errors.New("Task description is required")
+		return errors.New("task description is required")
 	}
 
 	description := args[0]
